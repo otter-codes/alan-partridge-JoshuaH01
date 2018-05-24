@@ -1,19 +1,18 @@
-import scala.util.matching.Regex.Match
+
 
 object AlanPartridge extends App {
 
   def partridge(terms: List[String]): String = {
 
-    terms match {
-      case Nil => "'Lynn, I've pierced my foot on a spike!!'"
-      case terms =>
-        if (terms == List("Partridge")) {
+    val matchList = List("Partridge", "PearTree", "Chat", "Dan", "Toblerone", "Lynn", "AlphaPapa", "Nomad")
+    val x = terms.filter(term => matchList.contains(term))
 
-          "'Mine's a pint!!'"
-        } else {
-          "'Lynn, I've pierced my foot on a spike!!'"
+    val numberOfMatches = x.length
 
-        }
+    numberOfMatches match {
+      case 0 => "'Lynn, I've pierced my foot on a spike!!'"
+      case _ => s"'Mine's a pint${ "!" * numberOfMatches  }'"
+
       }
     }
   }
