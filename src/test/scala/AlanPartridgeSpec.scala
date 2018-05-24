@@ -25,4 +25,25 @@ class AlanPartridgeSpec extends WordSpec with MustMatchers {
     }
 
   }
+
+  "hotOrCold" must {
+
+    "given a temperature return  'Help yourself to a honeycomb Yorkie for the glovebox.'" in {
+      AlanPartridge.hotOrCold(0) mustEqual  "'Help yourself to a honeycomb Yorkie for the glovebox.'"
+    }
+
+    "given a temperature lower than 1000 return  'Help yourself to a honeycomb Yorkie for the glovebox.'" in {
+      AlanPartridge.hotOrCold(10) mustEqual  "'Help yourself to a honeycomb Yorkie for the glovebox.'"
+    }
+
+    "given a temperature higher than 1000 return  'It's hotter than the sun!!'" in {
+      AlanPartridge.hotOrCold(1001) mustEqual  "'It's hotter than the sun!!'"
+    }
+
+    "given a temperature that is squared and is higher than 1000 return  'It's hotter than the sun!!'" in {
+      AlanPartridge.hotOrCold(100) mustEqual  "'It's hotter than the sun!!'"
+    }
+
+  }
+
 }
