@@ -16,8 +16,8 @@ object AlanPartridge extends App {
     }
   }
 
-  def hotOrCold(temperature: Int): Any = {
-    val degrees = temperature * temperature
+  def hotOrCold(temperature: Any): String = {
+    val degrees = temperature.toString.toInt * temperature.toString.toInt
 
     if (degrees >= 1000){
       "'It's hotter than the sun!!'"

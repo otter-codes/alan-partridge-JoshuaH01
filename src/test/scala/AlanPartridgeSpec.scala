@@ -44,6 +44,10 @@ class AlanPartridgeSpec extends WordSpec with MustMatchers {
       AlanPartridge.hotOrCold(100) mustEqual  "'It's hotter than the sun!!'"
     }
 
+    "given a temperature that is a string or an int that is squared and is higher than 1000 return  'It's hotter than the sun!!'" in {
+      AlanPartridge.hotOrCold(100) mustEqual  "'It's hotter than the sun!!'"
+    }
+
   }
 
 }
