@@ -24,6 +24,17 @@ object AlanPartridge extends App {
     } else {
       "'Help yourself to a honeycomb Yorkie for the glovebox.'"
     }
+  }
+
+  def stations(stations: Array[String]) : String = {
+
+    val stationmatch = Array("Rejection", "Disappointment", "Backstabbing Central", "Shattered Dreams Parkway")
+
+    if (stationmatch.forall(station => stations.contains(station))) {
+      "'Smell my cheese you mother!'"
+    } else {
+      "'No, seriously, run. You will miss it.'"
+    }
 
   }
 }

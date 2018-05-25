@@ -6,22 +6,18 @@ class AlanPartridgeSpec extends WordSpec with MustMatchers {
 
     "say 'Lynn, I've pierced my foot on a spike!!' when given an empty list" in {
       AlanPartridge.partridge(List()) mustEqual "'Lynn, I've pierced my foot on a spike!!'"
-
     }
 
     "when given a list with a term that does not relate to alan partridge print 'Lynn, I've pierced my foot on a spike!!'" in {
       AlanPartridge.partridge(List("Josh")) mustEqual "'Lynn, I've pierced my foot on a spike!!'"
-
     }
 
     "when given a list of terms with one term related to Alan Partridge, print 'mines a pint!!'" in {
       AlanPartridge.partridge(List("Partridge")) mustEqual "'Mine's a pint!'"
-
     }
 
     "Traverse list of terms,if any are related to Alan Partridge print 'mines a pint!!'" in {
       AlanPartridge.partridge(List("Partridge", "PearTree", "Chat", "Dan", "Toblerone", "Lynn", "AlphaPapa", "Nomad")) mustEqual "'Mine's a pint!!!!!!!!'"
-
     }
 
   }
@@ -50,4 +46,15 @@ class AlanPartridgeSpec extends WordSpec with MustMatchers {
 
   }
 
+  "stations" must {
+
+    "given an empty list return 'No, seriously, run. You will miss it.'" in {
+      AlanPartridge.stations(Array()) mustEqual "'No, seriously, run. You will miss it.'"
+    }
+
+    "given a list with all the correct terms return 'Smell my cheese you mother!'" in {
+      AlanPartridge.stations(Array("Rejection", "Disappointment", "Backstabbing Central", "Shattered Dreams Parkway"))mustEqual "'Smell my cheese you mother!'"
+
+    }
+  }
 }
